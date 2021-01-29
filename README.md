@@ -75,7 +75,7 @@ to increment the sequence file and registry.
 
 ## Outputs
 
-### `Results_dd-mm-yyyy`
+### Results_dd-mm-yyyy
 
 `dd-mm-yyyy_RunOverview.docx`
 > This is a report for the run which contains the number of sequences assigned to each subtype, the phylogeny for the sequences in the run and the results of the clustering
@@ -96,7 +96,7 @@ to increment the sequence file and registry.
 
 > Output of sierrapy formatted for word
 
-`hivtrace_dd-mm-yyy`
+### hivtrace_dd-mm-yyy
 
 > Outputs from hivtrace
 
