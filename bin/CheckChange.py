@@ -206,10 +206,10 @@ for clstr in addition.keys():
     logsummary.write("The cluster "+str(clstr)+" has grown by "+str(len(addition[clstr]))+" with the addition of "+str(addition[clstr])+"\n")
   
     #print("There are ",len(newcluster.keys())," new clusters with the following sizes")
-    logsummary.write("The cluster "+str(clstr)+" has grown by "+str(len(addition[clstr]))+" with the addition of "+str(addition[clstr])+"\n")
+    #logsummary.write("The cluster "+str(clstr)+" has grown by "+str(len(addition[clstr]))+" with the addition of "+str(addition[clstr])+"\n")
 for clstr in newcluster.keys():
   #print(clstr," with ",len(newcluster[clstr])," members = ",newcluster[clstr])
-  logsummary.write("New clusters"+str(clstr)+" with "+str(len(newcluster[clstr]))+" members = "+str(newcluster[clstr])+"\n")
+  logsummary.write("New clusters "+str(clstr)+" with "+str(len(newcluster[clstr]))+" members = "+str(newcluster[clstr])+"\n")
 #print(data)
 
 #now = datetime.datetime.now()

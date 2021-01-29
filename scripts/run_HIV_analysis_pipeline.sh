@@ -63,6 +63,8 @@ do
         esac
 done
 
+if [ $OPTIND -eq 1 ]; then echo "$usage"; fi
+
 # CHECK USER INPUT PARAMETERS!!
 if [ -z "$FASTA" ];
 then
@@ -182,7 +184,9 @@ else
   # get cluster assignments for singletons as well
   hivnetworkcsv -i ${now}_${newdb}_user.tn93output.csv  -t 0.015 -f plain -J -q --singletons include -c ${HIVTRACE_OUTPUT}/${now}_${newdb}_cluster.csv > ${now}_withsingletons.json
   mv ${now}_${newdb}_user.tn93output.csv ${HIVTRACE_OUTPUT}
-  sed 's/,/\tc/' ${HIVTRACE_OUTPUT}/${now}_${newdb}_cluster.csv > ${HIVTRACE_OUTPUT}/${now}_${newdb}_cluster.txt  
+  #sed 's/,/\tc/' ${HIVTRACE_OUTPUT}/${now}_${newdb}_cluster.csv > ${HIVTRACE_OUTPUT}/${now}_${newdb}_cluster.txt  
+  sed $'s/,/\tc/' ${HIVTRACE_OUTPUT}/${now}_${newdb}_cluster.csv > ${HIVTRACE_OUTPUT}/${now}_${newdb}_cluster.txt  
+  
   
   printf "\nReached the end of clustering pipeline.\n\n.Updating registry...\n"
   
@@ -194,8 +198,8 @@ else
 
   
   # add line to write run report - WITH CLUSTER INFO!
-  echo ${script_dir}/bin/write_run_overview.py --fasta $BASE --subtypes ${now}_subtypes.txt --tree $TREE_PNG --clusters --reg ${now}.registry.txt
-  ${script_dir}/bin/write_run_overview.py --fasta $BASE --subtypes ${now}_subtypes.txt --tree $TREE_PNG --clusters --reg ${now}.registry.txt
+  echo ${script_dir}/bin/write_run_overview.py --fasta $BASE --subtypes ${now}_subtypes.txt --tree $TREE_PNG --clusters 01-01-2020.log --reg ${now}.registry.txt
+  ${script_dir}/bin/write_run_overview.py --fasta $BASE --subtypes ${now}_subtypes.txt --tree $TREE_PNG --clusters 01-01-2020.log --reg ${now}.registry.txt
 
   # Generate an ML phylogeny for all the sequences
   echo "Running phylogeny using Raxml and GTR+GAMMA model on all the sequences WITHOUT bootstrap analysis..."
