@@ -92,7 +92,7 @@ to increment the sequence file and registry.
 `dd-mm-yyyy_sequence_db.fa`
 > The previous and new dataset of subtype C sequences - IMPORTANT
 
-`folder dd-mm-yyyy_reports`
+### dd-mm-yyyy_reports
 
 > Output of sierrapy formatted for word
 
@@ -100,7 +100,7 @@ to increment the sequence file and registry.
 
 > Outputs from hivtrace
 
-`RAxML`
+### RAxML
 
 > Output from the phylogenetic analysis
 
